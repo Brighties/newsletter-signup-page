@@ -1,0 +1,39 @@
+@import url(../scripts-and-styles/styles.css);
+
+.subscription-success-container {
+  padding-inline: calc(0.2 * 100vw);
+}
+.subscription-success-container > * {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+.subscription-success-header {
+  font-family: "Roboto-bold";
+  font-size: 2rem;
+}
+.subscribed-email-address {
+  font-family: "Roboto-bold";
+  font-weight: bold;
+}
+figure {
+  width: 50px;
+  aspect-ratio: 1;
+}
+
+.dismiss-button {
+  border-radius: var(--border-radius);
+  background: hsl(var(--dark-slate-grey));
+  color: hsl(var(--white));
+  border: 0;
+  transition: var(--transition);
+}
+.dismiss-button:hover {
+  cursor: pointer;
+  background: rgb(255, 82, 82);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 82, 82, 1) 50%,
+    rgba(255, 138, 82, 1) 100%
+  );
+  transition: var(--transition);
+}

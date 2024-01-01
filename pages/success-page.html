@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter Subscription Success Page</title>
+    <link rel="stylesheet" href="success-page.css">
+</head>
+
+<body>
+    <section class="subscription-success-container">
+        <figure><img src="../assets/images/icon-success.svg" alt=""></figure>
+        <h1 class="subscription-success-header">Thanks for subscribing!</h1>
+        <p>
+            A confirmation email has been sent to
+            <span class="subscribed-email-address"></span>
+            Please open it and click the button inside to confirm your subscription.
+        </p>
+        <button class="dismiss-button">Dismiss message</button>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const validEmailAddress = document.querySelector(".subscribed-email-address");
+            const closeBtn = document.querySelector('.dismiss-button');
+            // Get the email parameter from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const emailAddress = urlParams.get("email");
+
+            if (validEmailAddress && emailAddress) {
+                // Set the text content on the success page
+                validEmailAddress.textContent = emailAddress;
+            } else {
+                console.error(new Error("Email address not found"));
+            }
+            closeBtn.addEventListener('click', () => {
+                window.location.href = "../index.html";
+            })
+        });
+
+    </script>
+</body>
+
+</html>
