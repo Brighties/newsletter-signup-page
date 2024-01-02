@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded");
 
+  // chamging the image src when the screen is smaller
+
+  // grab the value of the current screen size
+  const screenWidth = window.innerWidth;
+  const newsletterImage = document.querySelector(".newsletter-page-image");
+  console.log(screenWidth);
+  if (screenWidth <= 600 && newsletterImage) {
+    newsletterImage.src = "./assets/images/illustration-sign-up-mobile.svg";
+  }
+
+  // email input field logic
   let emailAddress = "";
   const emailInputField = document.querySelector("#email-input-field");
   const submitBtn = document.querySelector(".submit-button");

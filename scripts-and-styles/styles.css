@@ -35,7 +35,6 @@ body {
   height: 100vh;
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
-  padding: 1rem;
   color: hsl(var(--dark-slate-grey));
 }
 input {
@@ -56,9 +55,8 @@ button {
 .entire-page-container {
   display: flex;
   justify-content: space-between;
-  max-height: 400px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0;
   margin-bottom: 1rem;
 }
 
@@ -88,6 +86,7 @@ button {
 }
 .newsletter-benefits-list__item {
   padding-bottom: 5px;
+  list-style-position: outside;
   list-style-image: url(../assets/images/icon-list.svg);
 }
 
@@ -167,8 +166,12 @@ button {
 
 /* MEDIA QUERY */
 @media screen and (max-width: 600px) {
+  body {
+    justify-content: flex-start;
+  }
   .entire-page-container {
     flex-direction: column-reverse;
-    max-height: 100%;
+    width: 100%;
+    max-height: 90%;
   }
 }
